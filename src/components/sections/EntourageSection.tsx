@@ -3,7 +3,7 @@ import { entourage } from "@/lib/wedding";
 
 export const EntourageSection = () => {
   return (
-    <section id="entourage" className="px-8 py-20 md:px-14">
+    <section id="entourage" className="px-6 py-20 md:px-10">
       <SectionHeading>Entourage</SectionHeading>
       <p className="mx-auto max-w-lg text-center font-serif text-lg leading-relaxed text-ink/80">
         {entourage.note}
@@ -12,9 +12,9 @@ export const EntourageSection = () => {
         {entourage.groups.map((group) => (
           <li
             key={group.title}
-            className="rounded-2xl border border-parchment bg-ivory-soft p-6 text-center"
+            className="rounded-2xl border border-burgundy/15 bg-ivory-soft p-6 text-center"
           >
-            <h3 className="font-display text-[11px] tracking-[0.28em] text-olive uppercase">
+            <h3 className="font-display text-[11px] tracking-[0.28em] text-burgundy uppercase">
               {group.title}
             </h3>
             {group.names.map((name) => (

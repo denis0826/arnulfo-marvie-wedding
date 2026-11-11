@@ -5,12 +5,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#f7f1e8",
-        "ivory-soft": "#fbf7f0",
-        parchment: "#ede4d4",
-        burgundy: "#6b2430",
-        "burgundy-deep": "#4a1520",
-        "burgundy-soft": "#8b3a45",
+        ivory: "#f4ebe4",
+        "ivory-soft": "#f8f0ea",
+        parchment: "#ead9d1",
+        burgundy: "#7a2230",
+        "burgundy-deep": "#4a121c",
+        "burgundy-soft": "#9a3d4a",
         olive: "#5a6b3a",
         "olive-deep": "#3e4a28",
         moss: "#6e7f4a",

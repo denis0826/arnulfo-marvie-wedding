@@ -12,7 +12,7 @@ export const FaqSection = () => {
   };
 
   return (
-    <section id="faq" className="px-8 py-20 md:px-14">
+    <section id="faq" className="px-6 py-20 md:px-10">
       <SectionHeading>Q&A</SectionHeading>
       <p className="mx-auto mb-8 max-w-lg text-center font-serif text-lg leading-relaxed text-ink/80">
         If you have any questions, please begin here. For anything else, message{" "}
@@ -25,7 +25,7 @@ export const FaqSection = () => {
           return (
             <article
               key={item.question}
-              className="rounded-2xl border border-parchment bg-ivory-soft"
+              className="rounded-2xl border border-burgundy/15 bg-ivory-soft"
             >
               <button
                 type="button"
@@ -36,7 +36,7 @@ export const FaqSection = () => {
                 <span className="font-serif text-lg text-burgundy">
                   {item.question}
                 </span>
-                <span className="font-display text-olive" aria-hidden="true">
+                <span className="font-display text-burgundy" aria-hidden="true">
                   {isOpen ? "–" : "+"}
                 </span>
               </button>

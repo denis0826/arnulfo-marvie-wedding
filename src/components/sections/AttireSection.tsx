@@ -3,20 +3,20 @@ import { attire } from "@/lib/wedding";
 
 export const AttireSection = () => {
   return (
-    <section id="attire" className="px-8 py-20 md:px-14">
+    <section id="attire" className="px-6 py-20 md:px-10">
       <SectionHeading eyebrow={attire.theme}>Wedding Attire</SectionHeading>
       <p className="mx-auto max-w-lg text-center font-serif text-lg leading-relaxed text-ink/80">
         {attire.intro}
       </p>
       <div className="mt-10 grid gap-4">
-        <article className="rounded-2xl border border-parchment bg-ivory-soft p-6">
-          <p className="font-display text-[10px] tracking-[0.28em] text-olive uppercase">
+        <article className="rounded-2xl border border-burgundy/15 bg-ivory-soft p-6">
+          <p className="font-display text-[10px] tracking-[0.28em] text-burgundy uppercase">
             Ladies
           </p>
           <p className="mt-2 font-serif text-lg text-ink">{attire.ladies}</p>
         </article>
-        <article className="rounded-2xl border border-parchment bg-ivory-soft p-6">
-          <p className="font-display text-[10px] tracking-[0.28em] text-olive uppercase">
+        <article className="rounded-2xl border border-burgundy/15 bg-ivory-soft p-6">
+          <p className="font-display text-[10px] tracking-[0.28em] text-burgundy uppercase">
             Gentlemen
           </p>
           <p className="mt-2 font-serif text-lg text-ink">{attire.gentlemen}</p>

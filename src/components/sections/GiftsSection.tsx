@@ -3,7 +3,7 @@ import { gifts } from "@/lib/wedding";
 
 export const GiftsSection = () => {
   return (
-    <section id="gifts" className="px-8 py-20 md:px-14">
+    <section id="gifts" className="px-6 py-20 md:px-10">
       <SectionHeading>Tokens of Love</SectionHeading>
       <div className="mx-auto max-w-lg text-center">
         <p className="font-serif text-lg leading-relaxed text-ink/80">
@@ -12,8 +12,8 @@ export const GiftsSection = () => {
         <p className="mt-5 font-serif text-lg leading-relaxed text-ink/80">
           {gifts.body}
         </p>
-        <div className="mt-10 inline-flex flex-col items-center rounded-2xl border border-burgundy/20 bg-ivory-soft px-8 py-6">
-          <p className="font-display text-[10px] tracking-[0.28em] text-olive uppercase">
+        <div className="mt-10 inline-flex flex-col items-center rounded-2xl border border-burgundy/25 bg-burgundy/[0.04] px-8 py-6">
+          <p className="font-display text-[10px] tracking-[0.28em] text-burgundy uppercase">
             Wedding gift envelope
           </p>
           <p className="mt-2 font-script text-3xl text-burgundy">

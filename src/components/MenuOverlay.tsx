@@ -52,7 +52,7 @@ export const MenuOverlay = ({
             <p className="font-script text-4xl leading-tight text-burgundy">
               {couple.shortNames}
             </p>
-            <p className="mt-1 font-display text-[10px] tracking-[0.28em] text-olive uppercase">
+            <p className="mt-1 font-display text-[10px] tracking-[0.28em] text-burgundy uppercase">
               April 23, 2027
             </p>
           </div>
@@ -65,7 +65,7 @@ export const MenuOverlay = ({
             <span className="text-xl leading-none">×</span>
           </button>
         </div>
-        <Flourish className="mt-6 h-8 w-40 text-olive/70" />
+        <Flourish className="mt-6 h-8 w-40 text-burgundy/70" />
         <nav className="mt-8 flex flex-1 flex-col gap-1 overflow-y-auto pr-2" aria-label="Guest pages">
           {navItems.map((item) => (
             <button
@@ -83,7 +83,7 @@ export const MenuOverlay = ({
         <button
           type="button"
           onClick={() => handleNavigate("rsvp")}
-          className="mt-6 inline-flex items-center justify-center rounded-full border border-burgundy px-5 py-3 font-display text-xs tracking-[0.22em] text-burgundy uppercase transition hover:bg-burgundy hover:text-ivory"
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-burgundy px-5 py-3 font-display text-xs tracking-[0.22em] text-ivory uppercase transition hover:bg-burgundy-deep"
         >
           RSVP by {rsvp.deadlineLabel}
         </button>

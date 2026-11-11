@@ -59,14 +59,14 @@ export const SectionHeading = ({
     <header className="mb-10 text-center">
       <Flourish className="mx-auto mb-5 h-10 w-48 text-burgundy/80" />
       {eyebrow ? (
-        <p className="mb-3 font-display text-[11px] tracking-[0.35em] text-olive uppercase">
+        <p className="mb-3 font-display text-[11px] tracking-[0.35em] text-burgundy uppercase">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="px-2 font-script text-[2.75rem] leading-tight text-burgundy md:text-5xl">
+      <h2 className="px-2 font-script text-[2.5rem] leading-[1.15] break-words text-burgundy md:text-[2.75rem]">
         {children}
       </h2>
-      <div className="mx-auto mt-5 h-px w-16 bg-olive/40" />
+      <div className="mx-auto mt-5 h-px w-16 bg-burgundy/35" />
     </header>
   );
 };

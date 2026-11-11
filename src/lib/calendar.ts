@@ -20,7 +20,7 @@ export const toGoogleCalendarUrl = (event: ScheduleEvent) => {
 };
 
 export const toIcs = (event: ScheduleEvent) => {
-  const stamp = toUtcStamp(new Date().toISOString());
+  const stamp = toUtcStamp(event.startIso);
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",

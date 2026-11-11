@@ -88,7 +88,7 @@ export const RsvpSection = () => {
   };
 
   return (
-    <section id="rsvp" className="px-8 py-20 md:px-14">
+    <section id="rsvp" className="px-6 py-20 md:px-10">
       <SectionHeading>RSVP</SectionHeading>
       <p className="mx-auto max-w-lg text-center font-serif text-lg leading-relaxed text-ink/80">
         Kindly reply by {rsvp.deadlineLabel}. You may also message{" "}
@@ -99,13 +99,13 @@ export const RsvpSection = () => {
           href={rsvp.whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex rounded-full border border-olive px-4 py-2 font-display text-[10px] tracking-[0.18em] text-olive uppercase transition hover:bg-olive hover:text-ivory"
+          className="inline-flex rounded-full border border-burgundy px-4 py-2 font-display text-[10px] tracking-[0.18em] text-burgundy uppercase transition hover:bg-burgundy hover:text-ivory"
         >
           Message on WhatsApp
         </a>
       </div>
       {status === "success" ? (
-        <div className="mx-auto mt-10 max-w-md rounded-2xl border border-olive/30 bg-ivory-soft p-8 text-center">
+        <div className="mx-auto mt-10 max-w-md rounded-2xl border border-burgundy/20 bg-burgundy/[0.04] p-8 text-center">
           <p className="font-script text-4xl text-burgundy">Thank you</p>
           <p className="mt-3 font-serif text-lg leading-relaxed text-ink/80">
             Your reply has been received. We look forward to celebrating with you.
@@ -117,7 +117,7 @@ export const RsvpSection = () => {
           className="mx-auto mt-10 max-w-md space-y-5"
         >
           <label className="block">
-            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
               Full name
             </span>
             <input
@@ -130,7 +130,7 @@ export const RsvpSection = () => {
             />
           </label>
           <label className="block">
-            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
               Email
             </span>
             <input
@@ -144,7 +144,7 @@ export const RsvpSection = () => {
             />
           </label>
           <fieldset>
-            <legend className="mb-2 font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+            <legend className="mb-2 font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
               Will you attend?
             </legend>
             <div className="grid grid-cols-2 gap-3">
@@ -177,7 +177,7 @@ export const RsvpSection = () => {
           {form.attending === "yes" ? (
             <>
               <label className="block">
-                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
                   Number of guests
                 </span>
                 <select
@@ -194,7 +194,7 @@ export const RsvpSection = () => {
                 </select>
               </label>
               <fieldset>
-                <legend className="mb-2 font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+                <legend className="mb-2 font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
                   Events
                 </legend>
                 <div className="space-y-2">
@@ -215,7 +215,7 @@ export const RsvpSection = () => {
                 </div>
               </fieldset>
               <label className="block">
-                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
                   Meal preference
                 </span>
                 <select
@@ -231,7 +231,7 @@ export const RsvpSection = () => {
                 </select>
               </label>
               <label className="block">
-                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+                <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
                   Dietary notes
                 </span>
                 <input
@@ -244,7 +244,7 @@ export const RsvpSection = () => {
             </>
           ) : null}
           <label className="block">
-            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-olive uppercase">
+            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
               Note for the couple
             </span>
             <textarea

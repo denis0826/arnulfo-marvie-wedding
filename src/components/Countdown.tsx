@@ -35,7 +35,7 @@ export const Countdown = () => {
 
   if (!timeLeft) {
     return (
-      <p className="font-display text-[11px] tracking-[0.28em] text-olive uppercase">
+      <p className="font-display text-[11px] tracking-[0.28em] text-burgundy uppercase">
         Counting the days
       </p>
     );
@@ -49,7 +49,7 @@ export const Countdown = () => {
   ];
 
   return (
-    <p className="font-display text-[11px] tracking-[0.22em] text-olive uppercase">
+    <p className="font-display text-[11px] tracking-[0.22em] text-burgundy uppercase">
       {parts.map((part) => `${part.value} ${part.label}`).join("  ")}
     </p>
   );

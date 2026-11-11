@@ -4,21 +4,21 @@ import { events, weddingDate } from "@/lib/wedding";
 
 export const ScheduleSection = () => {
   return (
-    <section id="schedule" className="px-8 py-20 md:px-14">
+    <section id="schedule" className="px-6 py-20 md:px-10">
       <SectionHeading>Schedule & Venues</SectionHeading>
-      <p className="mb-8 text-center font-display text-[11px] tracking-[0.32em] text-olive uppercase">
+      <p className="mb-8 text-center font-display text-[11px] tracking-[0.32em] text-burgundy uppercase">
         {weddingDate.longLabel}
       </p>
-      <ol className="relative space-y-8 before:absolute before:top-3 before:bottom-3 before:left-[11px] before:w-px before:bg-olive/25 lg:before:hidden">
+      <ol className="relative space-y-8 before:absolute before:top-3 before:bottom-3 before:left-[11px] before:w-px before:bg-burgundy/25 lg:before:hidden">
         {events.map((event) => (
           <li
             key={event.id}
-            className="relative rounded-2xl border border-parchment bg-ivory-soft/80 p-6 shadow-[0_10px_30px_rgba(74,21,32,0.06)] lg:pl-6"
+            className="relative rounded-2xl border border-burgundy/15 bg-ivory-soft/80 p-6 shadow-[0_10px_30px_rgba(74,21,32,0.08)] lg:pl-6"
           >
             <span className="absolute top-7 left-0 h-2.5 w-2.5 rounded-full bg-burgundy lg:hidden" />
             <div className="flex flex-wrap items-start justify-between gap-3">
               <h3 className="font-serif text-2xl text-burgundy">{event.title}</h3>
-              <span className="rounded-full bg-parchment px-3 py-1 font-display text-[10px] tracking-[0.18em] text-olive uppercase">
+              <span className="rounded-full bg-burgundy/10 px-3 py-1 font-display text-[10px] tracking-[0.18em] text-burgundy uppercase">
                 {event.time} – {event.endTime}
               </span>
             </div>
@@ -52,7 +52,7 @@ export const ScheduleSection = () => {
               <a
                 href={toIcs(event)}
                 download={`${event.id}.ics`}
-                className="rounded-full border border-olive/30 px-4 py-2 font-display text-[10px] tracking-[0.16em] text-olive uppercase transition hover:bg-olive hover:text-ivory"
+                className="rounded-full border border-burgundy/30 px-4 py-2 font-display text-[10px] tracking-[0.16em] text-burgundy uppercase transition hover:bg-burgundy hover:text-ivory"
               >
                 Download ICS
               </a>

@@ -4,23 +4,30 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: #f7f1e8;
+  background: #f4ebe4;
   color: #3a2728;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: #6b2430;
-  color: #f7f1e8;
+  background: #7a2230;
+  color: #f4ebe4;
 }
 
 .paper {
-  background-color: #f7f1e8;
+  background-color: #f4ebe4;
   background-image:
-    radial-gradient(ellipse at top, rgba(107, 36, 48, 0.04), transparent 55%),
-    radial-gradient(ellipse at bottom, rgba(90, 107, 58, 0.05), transparent 50%);
+    linear-gradient(180deg, rgba(122, 34, 48, 0.045), transparent 18%, transparent 82%, rgba(122, 34, 48, 0.06)),
+    radial-gradient(ellipse at top, rgba(122, 34, 48, 0.08), transparent 58%),
+    radial-gradient(ellipse at bottom, rgba(74, 18, 28, 0.05), transparent 52%);
+}
+
+.font-script {
+  overflow-wrap: break-word;
 }
 
 .grain {
@@ -39,7 +46,7 @@ body {
 
 .panel-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #8b3a45 transparent;
+  scrollbar-color: #7a2230 transparent;
 }
 
 .panel-scroll::-webkit-scrollbar {
@@ -47,6 +54,6 @@ body {
 }
 
 .panel-scroll::-webkit-scrollbar-thumb {
-  background: #8b3a45;
+  background: #7a2230;
   border-radius: 999px;
 }
