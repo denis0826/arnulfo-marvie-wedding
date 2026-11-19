@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { Flourish, SectionHeading } from "@/components/Flourish";
 import { SplitLayout } from "@/components/SplitLayout";
 import { couple } from "@/lib/wedding";
@@ -182,12 +183,12 @@ export const AdminDashboard = () => {
               {isSaving ? "Opening" : "View replies"}
             </button>
           </form>
-          <a
+          <Link
             href="/"
             className="mt-8 font-display text-[11px] tracking-[0.22em] text-burgundy uppercase underline-offset-4 hover:underline"
           >
             Back to invitation
-          </a>
+          </Link>
           <Flourish className="mt-12 h-12 w-56 text-burgundy/75" />
         </section>
       );
@@ -282,12 +283,12 @@ export const AdminDashboard = () => {
           </ul>
         )}
         <p className="mt-12 text-center">
-          <a
+          <Link
             href="/"
             className="font-display text-[11px] tracking-[0.22em] text-burgundy uppercase underline-offset-4 hover:underline"
           >
             Back to invitation
-          </a>
+          </Link>
         </p>
       </div>
     );
