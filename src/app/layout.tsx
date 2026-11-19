@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Arnulfo Jr & Marvie Dane | April 23, 2027",
   description:
     "You are invited to the wedding of Arnulfo Bernaje Jr and Marvie Dane Tupas on Friday, April 23, 2027 in Bacolod City.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

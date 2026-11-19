@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Arnulfo and Marvie">
+  <title>Arnulfo and Marvie</title>
+  <circle cx="32" cy="32" r="32" fill="#7a2230"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#f4ebe4" stroke-width="1.35"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#f4ebe4" stroke-width="0.55" opacity="0.45"/>
+  <circle cx="32" cy="13.8" r="1.15" fill="#f4ebe4"/>
+  <circle cx="32" cy="50.2" r="1.15" fill="#f4ebe4"/>
+  <g fill="#f4ebe4">
+    <path
+      fill-rule="evenodd"
+      d="M13.9 46h3.95l1.55-4.85h8.2L29.15 46h4.05L26.4 18.4h-5.7L13.9 46Zm8.15-8.95 1.85-9.4 1.85 9.4h-3.7Z"
+    />
+    <path d="M35.2 46V18.4h4.2l5.85 16.85L51.1 18.4h4.2V46h-3.85V27.1L46.7 42.7h-3.05L38.95 27.1V46H35.2Z"/>
+  </g>
+</svg>
