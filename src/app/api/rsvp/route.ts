@@ -1,6 +1,5 @@
-import { mkdir, readFile, writeFile } from "fs/promises";
-import path from "path";
 import { NextResponse } from "next/server";
+import { saveRsvp } from "@/lib/rsvps";
 
 type RsvpPayload = {
   name?: string;
@@ -11,18 +10,6 @@ type RsvpPayload = {
   meal?: string;
   dietary?: string;
   message?: string;
-};
-
-const dataDirectory = path.join(process.cwd(), "data");
-const rsvpFile = path.join(dataDirectory, "rsvps.json");
-
-const readRsvps = async () => {
-  try {
-    const raw = await readFile(rsvpFile, "utf8");
-    return JSON.parse(raw) as unknown[];
-  } catch {
-    return [];
-  }
 };
 
 export async function POST(request: Request) {
@@ -38,20 +25,28 @@ export async function POST(request: Request) {
     );
   }
 
-  await mkdir(dataDirectory, { recursive: true });
-  const existing = await readRsvps();
-  existing.push({
-    name,
-    email,
-    attending,
-    guests: attending === "yes" ? body.guests ?? "1" : "0",
-    events: attending === "yes" ? body.events ?? [] : [],
-    meal: attending === "yes" ? body.meal ?? "" : "",
-    dietary: body.dietary?.trim() ?? "",
-    message: body.message?.trim() ?? "",
-    submittedAt: new Date().toISOString(),
-  });
-  await writeFile(rsvpFile, JSON.stringify(existing, null, 2));
+  try {
+    await saveRsvp({
+      name,
+      email,
+      attending,
+      guests: attending === "yes" ? body.guests ?? "1" : "0",
+      events: attending === "yes" ? body.events ?? [] : [],
+      meal: attending === "yes" ? body.meal ?? "" : "",
+      dietary: body.dietary?.trim() ?? "",
+      message: body.message?.trim() ?? "",
+    });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unable to save your RSVP right now.",
+      },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
