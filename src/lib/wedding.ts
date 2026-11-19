@@ -232,13 +232,197 @@ export const gifts = {
 };
 
 export const entourage = {
-  note: "We are gathering the beloved people who will stand with us at the altar. Names of our principal sponsors and wedding party will be shared here as they are confirmed.",
-  groups: [
-    { title: "Principal Sponsors", names: ["To be announced"] },
-    { title: "Best Man & Maid of Honor", names: ["To be announced"] },
-    { title: "Groomsmen & Bridesmaids", names: ["To be announced"] },
-    { title: "Secondary Sponsors", names: ["To be announced"] },
+  note: "The beloved family and friends who stand with us as we begin our forever.",
+  parents: [
+    {
+      title: "Parents of the Groom",
+      names: ["Engr. Arnulfo Bernaje Sr.", "Mrs. Inez Bernaje"],
+    },
+    {
+      title: "Parents of the Bride",
+      names: ["Mr. Danilo Tupas", "Mrs. Melva Tupas"],
+    },
   ],
+  principalSponsors: {
+    title: "Principal Sponsors",
+    columns: [
+      {
+        title: "Gentlemen",
+        names: [
+          "Hon. Judge Conrado Estreller Jr.",
+          "Hon. Julian Gatuslao",
+          "Hon. Myco Eliver",
+          "Dr. Ronel Sapuan",
+          "Engr. Charles Diño",
+          "Engr. Jesus Verde",
+          "Engr. Mayo Pelagio",
+          "Engr. Patrick Mabag",
+          "Engr. Regie Calvo",
+          "Engr. Ritchie Nillos",
+          "SPO4 Miguelito Garque",
+          "Mr. Paterno Tuhao Jr.",
+          "Mr. Edward Verzosa",
+          "Mr. Eliodoro Examen",
+          "Mr. Francisco Vaflor",
+          "Mr. Jolito Tupas",
+          "Mr. Lorenzo Eliver",
+          "Mr. Lorenzo Tumbis",
+          "Mr. Louie Eliver",
+          "Mr. Pablo Verzosa",
+          "Mr. Regino Jose Presillas",
+          "Mr. Rey Guerra",
+          "Mr. Woonseok Chae",
+          "Mr. Roberto Segovia",
+        ],
+      },
+      {
+        title: "Ladies",
+        names: [
+          "Mrs. Rosalie Bayle-Padrid",
+          "Dr. Judy Paez",
+          "Mrs. Ma. Leona Carmena Eliver",
+          "Dr. Flerida Demegillo",
+          "Engr. Marjorie Diño",
+          "Mrs. Rose Cordero",
+          "Engr. Ma. Lina Bautista",
+          "Engr. Glia Mabag",
+          "Engr. Ma. Zella Lasola",
+          "Engr. Amelita Baculna",
+          "Mrs. Lea Garque",
+          "Mrs. Ofelia Kepros",
+          "Mrs. Sugar Tongson",
+          "Engr. Ma. Cecilia Quilab",
+          "Mrs. Judith Vaflor",
+          "Mrs. Mary Jane Tupas",
+          "Mrs. Imelda Eliver",
+          "Mrs. Mary Glo Aronales",
+          "Mrs. Angie Claudine Eliver",
+          "Mrs. Rhodelia Gauma",
+          "Mrs. Juanita Escalante",
+          "Mrs. Elma Guerra",
+          "Mrs. Helen Bajada",
+          "Mrs. Suzzette Segovia",
+        ],
+      },
+    ],
+  },
+  honorAttendants: [
+    {
+      title: "Best Man",
+      names: ["Engr. Carmelo Lasola"],
+    },
+    {
+      title: "Maid of Honor",
+      names: ["Dr. Tanya Julyn Paez"],
+    },
+  ],
+  weddingParty: [
+    {
+      title: "Grooms Women",
+      names: [
+        "Ms. Lyrine Ortiz",
+        "Ms. Jordan Carson",
+        "Ms. Alexa Marie Verzosa",
+      ],
+    },
+    {
+      title: "Brides Men",
+      names: [
+        "Mr. Justine Yee",
+        "Mr. Prins Gesulgon",
+        "Mr. Vansh Bhardwaj",
+      ],
+    },
+  ],
+  attendants: [
+    {
+      title: "Groomsmen",
+      names: [
+        "Mr. Armando Verzosa III",
+        "Mr. Austin Clark Temana",
+        "Mr. Jeson Sanita",
+        "Mr. Cristian Jan Luberas",
+        "Mr. Jaime Padrid",
+        "Mr. Josh Bickerdike",
+        "Engr. Dennis Vega",
+        "Engr. Garry Gomez Jr.",
+        "Engr. Gideon Lorenzo Montealegre",
+        "Engr. Ivan Carlo Tiña",
+        "Engr. Juan Miguel Quiñones",
+        "Engr. Karl Julius Siosan",
+        "Engr. King Renier Sevillo",
+        "Engr. Leuven Sanre Dalisay",
+        "Engr. Raine Patrick Nicholas Gravanto",
+      ],
+    },
+    {
+      title: "Bridesmaids",
+      names: [
+        "Ms. Hyacinth Bernaje",
+        "Ms. Danica Bianca Uygioco",
+        "Ms. Danice Marie Francesca Suacito",
+        "Ms. Elaika Jed Rosquillo",
+        "Ms. Farrah May Carcedo",
+        "Ms. Kadek Devi Widiadyani",
+        "Ms. Mikaela Chanelle Eliver",
+        "Ms. Ma. Jean Eliver",
+        "Ms. Mutia Ardelia Hakim",
+        "Ms. Rina June Pasustento",
+        "Ms. Vanessa Aurelia Matthew",
+      ],
+    },
+    {
+      title: "Junior Bridesmaids",
+      names: [
+        "Ms. Alejah Miel Mudanza",
+        "Ms. Amity Al Rose Temana",
+        "Ms. Aubrey Claire Temana",
+        "Ms. Claudia Louisse Eliver",
+      ],
+    },
+  ],
+  secondarySponsors: [
+    {
+      title: "Candle",
+      names: ["Mr. John Dexter Tupas", "Mrs. Christine Joy Tupas"],
+    },
+    {
+      title: "Veil",
+      names: ["Engr. Manuel Paolo Masias", "Engr. Justine Marie Masias"],
+    },
+    {
+      title: "Cord",
+      names: ["Mr. Dennis Tupas", "Mrs. Ciara Anne Tupas"],
+    },
+  ],
+  bearers: [
+    {
+      title: "Ring Bearer",
+      names: ["Callyx Javier Tupas"],
+    },
+    {
+      title: "Bible Bearer",
+      names: ["Peter William Verzosa"],
+    },
+    {
+      title: "Coin Bearer",
+      names: ["Khyle Caleb Liu"],
+    },
+  ],
+  flowerGirls: {
+    title: "Flower Girls",
+    names: [
+      "Anne Lorraine Centena",
+      "Amhira Lightzane Agbuya",
+      "Adrianna Gale Braca",
+      "Khylie Calen Liu",
+      "Zephyra Drae Decatoria",
+      "Zsophia Elise Tiña",
+      "Cylvi Darzelle Tupas",
+      "Dennise Cate Tupas",
+      "Danielle Celestine Tupas",
+    ],
+  },
 };
 
 export const faqs = [
