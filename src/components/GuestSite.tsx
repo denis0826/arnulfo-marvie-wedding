@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MenuOverlay } from "@/components/MenuOverlay";
-import { PhotoPanel } from "@/components/PhotoPanel";
+import { SplitLayout } from "@/components/SplitLayout";
 import { AttireSection } from "@/components/sections/AttireSection";
 import { EntourageSection } from "@/components/sections/EntourageSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -52,7 +52,7 @@ export const GuestSite = () => {
   };
 
   return (
-    <div className="min-h-screen bg-ivory lg:flex lg:h-screen lg:overflow-hidden">
+    <div className="relative">
       <button
         type="button"
         onClick={handleOpenMenu}
@@ -62,13 +62,7 @@ export const GuestSite = () => {
         <span aria-hidden="true">☰</span>
         Menu
       </button>
-      <div className="min-w-0 lg:w-[54%] lg:shrink-0">
-        <PhotoPanel />
-      </div>
-      <main
-        ref={panelRef}
-        className="panel-scroll paper relative min-w-0 overflow-x-hidden lg:w-[46%] lg:overflow-y-auto lg:border-l lg:border-burgundy/25"
-      >
+      <SplitLayout mainRef={panelRef}>
         <WelcomeSection
           onViewDetails={() => handleNavigate("schedule")}
           onRsvp={() => handleNavigate("rsvp")}
@@ -94,7 +88,7 @@ export const GuestSite = () => {
             {couple.hashtag}
           </p>
         </footer>
-      </main>
+      </SplitLayout>
       {isMenuOpen ? (
         <MenuOverlay
           isOpen={isMenuOpen}

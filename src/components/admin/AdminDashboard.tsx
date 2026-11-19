@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { Flourish } from "@/components/Flourish";
+import { Flourish, SectionHeading } from "@/components/Flourish";
+import { SplitLayout } from "@/components/SplitLayout";
+import { couple } from "@/lib/wedding";
 import type { RsvpRecord } from "@/lib/rsvp-types";
 
 type Summary = {
@@ -130,72 +132,74 @@ export const AdminDashboard = () => {
     window.location.href = "/api/admin/rsvps?format=csv";
   };
 
-  if (isChecking) {
-    return (
-      <main className="paper flex min-h-screen items-center justify-center px-6">
-        <p className="font-display text-[11px] tracking-[0.28em] text-burgundy uppercase">
-          Opening the ledger
-        </p>
-      </main>
-    );
-  }
-
-  if (!isSignedIn) {
-    return (
-      <main className="paper flex min-h-screen items-center justify-center px-6 py-16">
-        <form
-          onSubmit={handleLogin}
-          className="w-full max-w-md rounded-3xl border border-burgundy/15 bg-ivory-soft/90 px-8 py-10 text-center shadow-[0_16px_40px_rgba(74,18,28,0.08)]"
-        >
-          <Flourish className="mx-auto mb-6 h-10 w-44 text-burgundy/75" />
-          <h1 className="font-script text-5xl text-burgundy">RSVP Admin</h1>
-          <p className="mt-3 font-serif text-lg text-ink/75">
-            Arnulfo Jr & Marvie Dane
-          </p>
-          <label className="mt-8 block text-left">
-            <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
-              Password
-            </span>
-            <input
-              type="password"
-              name="password"
-              autoComplete="current-password"
-              required
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="w-full rounded-xl border border-parchment bg-ivory px-4 py-3 font-serif text-lg outline-none ring-burgundy/30 focus:ring-2"
-            />
-          </label>
-          {errorMessage ? (
-            <p className="mt-4 font-serif text-sm text-burgundy-soft">
-              {errorMessage}
-            </p>
-          ) : null}
-          <button
-            type="submit"
-            disabled={isSaving}
-            className="mt-6 w-full rounded-full bg-burgundy px-5 py-3 font-display text-[11px] tracking-[0.24em] text-ivory uppercase transition hover:bg-burgundy-deep disabled:opacity-60"
-          >
-            {isSaving ? "Signing in" : "Sign in"}
-          </button>
-        </form>
-      </main>
-    );
-  }
-
-  return (
-    <main className="paper min-h-screen px-5 py-10 md:px-10">
-      <header className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="font-display text-[10px] tracking-[0.28em] text-burgundy uppercase">
-            Guest replies
-          </p>
-          <h1 className="mt-2 font-script text-5xl text-burgundy">RSVP Admin</h1>
-          <p className="mt-2 font-serif text-lg text-ink/75">
-            Arnulfo Jr & Marvie Dane · April 23, 2027
+  const rightPanel = () => {
+    if (isChecking) {
+      return (
+        <div className="flex min-h-full items-center justify-center px-6 py-16">
+          <p className="font-display text-[11px] tracking-[0.28em] text-burgundy uppercase">
+            Opening the ledger
           </p>
         </div>
-        <div className="flex flex-wrap gap-3">
+      );
+    }
+
+    if (!isSignedIn) {
+      return (
+        <section className="flex min-h-full flex-col items-center justify-center px-6 py-16 text-center md:px-10">
+          <Flourish className="mb-10 h-12 w-56 text-burgundy/75" />
+          <p className="font-display text-xs tracking-[0.28em] text-burgundy uppercase">
+            For the couple
+          </p>
+          <h1 className="mt-4 font-script text-5xl text-burgundy">Guest replies</h1>
+          <p className="mt-3 max-w-sm font-serif text-lg leading-relaxed text-ink/75">
+            Enter the password to see who has replied.
+          </p>
+          <form onSubmit={handleLogin} className="mt-10 w-full max-w-sm text-left">
+            <label className="block">
+              <span className="mb-2 block font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
+                Password
+              </span>
+              <input
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                required
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="w-full rounded-xl border border-parchment bg-ivory-soft px-4 py-3 font-serif text-lg outline-none ring-burgundy/30 focus:ring-2"
+              />
+            </label>
+            {errorMessage ? (
+              <p className="mt-4 font-serif text-sm text-burgundy-soft">
+                {errorMessage}
+              </p>
+            ) : null}
+            <button
+              type="submit"
+              disabled={isSaving}
+              className="mt-6 w-full rounded-full bg-burgundy px-5 py-3 font-display text-[11px] tracking-[0.24em] text-ivory uppercase transition hover:bg-burgundy-deep disabled:opacity-60"
+            >
+              {isSaving ? "Opening" : "View replies"}
+            </button>
+          </form>
+          <a
+            href="/"
+            className="mt-8 font-display text-[11px] tracking-[0.22em] text-burgundy uppercase underline-offset-4 hover:underline"
+          >
+            Back to invitation
+          </a>
+          <Flourish className="mt-12 h-12 w-56 text-burgundy/75" />
+        </section>
+      );
+    }
+
+    return (
+      <div className="px-6 py-16 md:px-10">
+        <SectionHeading eyebrow="Guest replies">RSVPs</SectionHeading>
+        <p className="mx-auto max-w-lg text-center font-serif text-lg leading-relaxed text-ink/80">
+          {couple.displayNames}
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             type="button"
             onClick={handleDownloadCsv}
@@ -211,93 +215,49 @@ export const AdminDashboard = () => {
             Sign out
           </button>
         </div>
-      </header>
-
-      <section className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          { label: "Replies", value: summary.total },
-          { label: "Attending", value: summary.attending },
-          { label: "Regrets", value: summary.declined },
-          { label: "Guest count", value: summary.guestCount },
-        ].map((item) => (
-          <article
-            key={item.label}
-            className="rounded-2xl border border-burgundy/15 bg-ivory-soft px-5 py-6"
-          >
-            <p className="font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
-              {item.label}
-            </p>
-            <p className="mt-2 font-serif text-4xl normal-nums text-burgundy">
-              {item.value}
-            </p>
-          </article>
-        ))}
-      </section>
-
-      {records.length === 0 ? (
-        <p className="mx-auto mt-16 max-w-6xl text-center font-serif text-lg text-ink/70">
-          No RSVPs yet. When guests reply, they will appear here.
-        </p>
-      ) : (
-        <>
-          <div className="mx-auto mt-10 hidden max-w-6xl overflow-hidden rounded-2xl border border-burgundy/15 bg-ivory-soft lg:block">
-            <table className="w-full text-left">
-              <thead className="bg-burgundy/10 font-display text-[10px] tracking-[0.18em] text-burgundy uppercase">
-                <tr>
-                  <th className="px-4 py-3 font-medium">Submitted</th>
-                  <th className="px-4 py-3 font-medium">Name</th>
-                  <th className="px-4 py-3 font-medium">Email</th>
-                  <th className="px-4 py-3 font-medium">Attending</th>
-                  <th className="px-4 py-3 font-medium">Guests</th>
-                  <th className="px-4 py-3 font-medium">Events</th>
-                  <th className="px-4 py-3 font-medium">Meal</th>
-                  <th className="px-4 py-3 font-medium">Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {records.map((record) => (
-                  <tr
-                    key={record.id}
-                    className="border-t border-burgundy/10 font-serif text-sm text-ink"
-                  >
-                    <td className="px-4 py-3 whitespace-nowrap text-ink/70">
-                      {formatDate(record.submittedAt)}
-                    </td>
-                    <td className="px-4 py-3">{record.name}</td>
-                    <td className="px-4 py-3">{record.email}</td>
-                    <td className="px-4 py-3">
-                      {record.attending === "yes" ? "Yes" : "No"}
-                    </td>
-                    <td className="px-4 py-3">{record.guests}</td>
-                    <td className="px-4 py-3">{eventLabel(record.events)}</td>
-                    <td className="px-4 py-3 capitalize">{record.meal || "—"}</td>
-                    <td className="px-4 py-3">
-                      {[record.dietary, record.message]
-                        .filter(Boolean)
-                        .join(" · ") || "—"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <ul className="mx-auto mt-8 grid max-w-6xl gap-4 lg:hidden">
+        <section className="mt-10 grid grid-cols-2 gap-3">
+          {[
+            { label: "Replies", value: summary.total },
+            { label: "Attending", value: summary.attending },
+            { label: "Regrets", value: summary.declined },
+            { label: "Guests", value: summary.guestCount },
+          ].map((item) => (
+            <article
+              key={item.label}
+              className="rounded-2xl border border-burgundy/15 bg-ivory-soft px-4 py-5 text-center"
+            >
+              <p className="font-display text-[10px] tracking-[0.22em] text-burgundy uppercase">
+                {item.label}
+              </p>
+              <p className="mt-2 font-serif text-4xl normal-nums text-burgundy">
+                {item.value}
+              </p>
+            </article>
+          ))}
+        </section>
+        {records.length === 0 ? (
+          <p className="mt-12 text-center font-serif text-lg text-ink/70">
+            No RSVPs yet. When guests reply, they will appear here.
+          </p>
+        ) : (
+          <ul className="mt-8 space-y-4">
             {records.map((record) => (
               <li
                 key={record.id}
                 className="rounded-2xl border border-burgundy/15 bg-ivory-soft p-5"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <p className="font-serif text-xl text-burgundy">{record.name}</p>
-                  <span className="rounded-full bg-burgundy/10 px-3 py-1 font-display text-[10px] tracking-[0.16em] text-burgundy uppercase">
+                  <p className="min-w-0 break-words font-serif text-xl text-burgundy">
+                    {record.name}
+                  </p>
+                  <span className="shrink-0 rounded-full bg-burgundy/10 px-3 py-1 font-display text-[10px] tracking-[0.16em] text-burgundy uppercase">
                     {record.attending === "yes" ? "Yes" : "No"}
                   </span>
                 </div>
                 <p className="mt-1 font-serif text-sm text-ink/70">
                   {formatDate(record.submittedAt)}
                 </p>
-                <p className="mt-3 font-serif text-base">{record.email}</p>
+                <p className="mt-3 break-words font-serif text-base">{record.email}</p>
                 <p className="mt-2 font-serif text-base text-ink/80">
                   {record.guests} guest{record.guests === "1" ? "" : "s"} ·{" "}
                   {eventLabel(record.events)}
@@ -320,8 +280,18 @@ export const AdminDashboard = () => {
               </li>
             ))}
           </ul>
-        </>
-      )}
-    </main>
-  );
+        )}
+        <p className="mt-12 text-center">
+          <a
+            href="/"
+            className="font-display text-[11px] tracking-[0.22em] text-burgundy uppercase underline-offset-4 hover:underline"
+          >
+            Back to invitation
+          </a>
+        </p>
+      </div>
+    );
+  };
+
+  return <SplitLayout>{rightPanel()}</SplitLayout>;
 };
